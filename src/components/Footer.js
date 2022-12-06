@@ -9,22 +9,22 @@ export default function Footer(){
          {/* Section: Social media */}
          <section className="mb-4">
            {/* Facebook */}
-           <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class='bx bxl-facebook-circle'></i></a>
+           <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i className='bx bxl-facebook-circle'></i></a>
            {/* Twitter */}
-           <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class='bx bxl-twitter' ></i></a>
+           <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i className='bx bxl-twitter' ></i></a>
            {/* Google */}
-           <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class='bx bxl-google'></i></a>
+           <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i className='bx bxl-google'></i></a>
            {/* Instagram */}
-           <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class='bx bxl-instagram-alt'></i></a>
+           <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i className='bx bxl-instagram-alt'></i></a>
            {/* Linkedin */}
-           <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class='bx bxl-linkedin-square' ></i></a>
+           <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i className='bx bxl-linkedin-square' ></i></a>
            {/* Github */}
-           <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class='bx bxl-github' ></i></a>
+           <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i className='bx bxl-github' ></i></a>
          </section>
          {/* Section: Social media */}
          {/* Section: Form */}
-         <section className>
-           <form action>
+         <section >
+           <form >
              {/*Grid row*/}
              <div className="row d-flex justify-content-center">
                {/*Grid column*/}
@@ -66,7 +66,7 @@ export default function Footer(){
          </section>
          {/* Section: Text */}
          {/* Section: Links */}
-         <section className>
+         <section >
            {/*Grid row*/}
            <div className="row">
              {/*Grid column*/}
@@ -109,7 +109,7 @@ export default function Footer(){
              {/*Grid column*/}
              {/*Grid column*/}
              <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
-               <h5 className="text-uppercase">More</h5>
+               <h5 className="text-uppercase">Links</h5>
                <ul className="list-unstyled mb-0">
                  <li>
                    <Link href="#!" className="text-white">best sales</Link>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import proda from '../imgs/product.jpg'
 
 export default function Cart(){
@@ -53,7 +54,7 @@ export default function Cart(){
 
                 <div className='row p-5'>
                     <div className='f-holder'>
-                        <button className='btn btn-dark'>Checkout</button>
+                        <Link to='/checkout' className='btn btn-dark'>Checkout</Link>
                     </div>
                 </div>
             </div>

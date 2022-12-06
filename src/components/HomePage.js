@@ -1,9 +1,14 @@
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import product from '../imgs/product.jpg'
 
 export default function HomePage(){
+    const myref= useRef()
+    useEffect(()=>{
+        myref.current?.scrollIntoView({behavior: 'smooth'});
+    },[])
     return (
-        <div>
+        <div ref={myref}>
             <div className="container-fluid text-white starter" id="land">
                 <div className="row p-5">
                     <h1 className=" display-1 text-center">Welcome to</h1>

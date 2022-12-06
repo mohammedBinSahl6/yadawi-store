@@ -5,7 +5,7 @@ import Counter from './components/Counter';
 import HomePage from './components/HomePage';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
-import Products from './components/Products';
+import Contact from './components/Contact'
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import SignUP from './components/SignUp';
@@ -13,16 +13,25 @@ import Shop from './components/Shop';
 import Footer from './components/Footer';
 import Product from './components/Product';
 import Cart from './components/Cart';
+import Checkout from './components/Checkout';
 Aos.init()
 
 
 function App() {
   const location = useLocation()
+  const getRoutes = ()=>{
+   if( location.pathname.toLocaleLowerCase().includes('login')
+  ||location.pathname.toLocaleLowerCase().includes('signup')
+   )
+   return true
+   else
+   return false
+  }
 
   return (
    <div className='app'>
     {
-      !location.pathname.toLocaleLowerCase().includes('login')&&
+      !getRoutes()&&
       <Navbar />
       
     }
@@ -35,8 +44,12 @@ function App() {
       <Route exact path='/shop' element={<Shop />} />
       <Route exact path='/product/:id' element={<Product />} />
       <Route exact path='/cart' element={<Cart />} />
+      <Route exact path='/contact' element={<Contact />} />
+      <Route exact path='/checkout' element={<Checkout />} />
     </Routes>
-    <Footer />
+    {
+      !getRoutes()&&
+      <Footer />}
    </div>
   );
 }

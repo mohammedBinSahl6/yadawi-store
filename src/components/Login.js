@@ -1,7 +1,33 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import login from '../imgs/login.svg'
 
 const Login = ()=>{
+    const [email,setEmail]=useState('')
+    const [password,setPassword]=useState('')
+
+    const submitLogin=(e)=>{
+        e.preventDefault()
+            const body ={
+                email:email,
+                password:password
+            }
+            let header = new Headers()
+            header.append('Content-Type','application/json');
+            let requestOption={
+                method:'POST',
+                body:JSON.stringify(body),
+                headers:header
+            }
+            let apiUrl = process.env.REACT_APP_BASE_API_URL
+            fetch(`${apiUrl}/login`,requestOption).then(response=>{
+                return response.json()
+            }).then(result=>{
+                console.log(result)
+            }).catch(err=>{
+                console.log(err)
+            })
+    }
     return (
         <div className="login">
         <div className="container-fluid">
@@ -13,17 +39,24 @@ const Login = ()=>{
             <h1 className=" text-center my-5">Login</h1>
            </div>
                     <div className="f-holder">
-                        <form>
+                        <form onSubmit={submitLogin}>
                             <div className="mb-3 mt-3">
                                 <label className="form-label">Username</label>
-                                <input className="form-control" placeholder="username"></input>
+                                <input className="form-control" placeholder="username" value={email}
+                                onChange={(e)=>setEmail(e.target.value)}
+                                />
                             </div>
                             <div className="mb-3 mt-3">
                                 <label className="form-label">Password</label>
-                                <input className="form-control"type='password' placeholder="password"></input>
+                                <input className="form-control"type='password' placeholder="password"
+                                value={password}
+                                onChange={
+                                    (e)=>setPassword(e.target.value)
+                                }
+                                />
                             </div>
                             <div className="f-holder">
-                                <button className="btn btn-dark my-3">Login</button>
+                                <button className="btn btn-dark my-3" type=''>Login</button>
                             </div>
                         </form>
                     </div>
