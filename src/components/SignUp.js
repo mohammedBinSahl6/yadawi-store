@@ -1,8 +1,12 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import signup from '../imgs/signup.svg'
+import axios from 'axios';
+import { apiUrl } from './Login';
+
 
 export default function SignUP (){
+    const navigate = useNavigate()
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
     const [userName,setUserName]=useState('')
@@ -10,34 +14,29 @@ export default function SignUP (){
         e.preventDefault()
             const body ={
                 email:email,
-                password:password
+                password:password,
+                username:userName,
+                address:'',
+                phone:''
             }
-            let header = new Headers()
-            header.append('Content-Type','application/json');
-            let requestOption={
-                method:'POST',
-                body:JSON.stringify(body),
-                headers:header
-            }
-            let apiUrl = process.env.REACT_APP_BASE_API_URL
-            fetch(`${apiUrl}/register`,requestOption).then(response=>{
-                return response.json()
-            }).then(result=>{
-                localStorage.setItem('token',result.token)
-                console.log(result)
-            }).catch(err=>{
-                console.log(err)
-            })
+            axios.post(`${apiUrl}/register`,body)
+              .then(function (response) {
+                console.log(response.data);
+                localStorage.setItem('token', response.data.token)
+                alert('registered successfully');
+                navigate('/')
+              })
+              .catch(function (error) {
+                alert('registered failed');
+              });
     }
     return(
         <div className="sign-up">
         <div className="container-fluid">
         
            
-            <div className="row starter">
-            <div className="col-sm-6 image-side">
-                    <img className="img-fluid si-img" src={signup}  />
-                </div>
+            <div className="row ">
+           
                 <div className="col-sm-6 ">
                 <div className="row">
             <h1 className=" text-center my-5">Sign-UP</h1>
@@ -73,7 +72,9 @@ export default function SignUP (){
                     </div>
                     <p className='text-center'>Already have account?<Link to='/login'>Login</Link></p>
                 </div>
-               
+                <div className="col-sm-6 image-side">
+                    <img className="img-fluid si-img" src={signup}  />
+                </div>
             </div>
         </div>
 

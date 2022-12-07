@@ -12,7 +12,7 @@ const [isLoading,setIsLoading] = useState(true)
             method : 'GET'
         }
         let apiURL = process.env.REACT_APP_BASE_API_URL
-        fetch(`${apiURL}/shop`,requestOption).then(response => {
+        fetch(`${apiURL}/products`,requestOption).then(response => {
             console.log(response)
             return response.json()
         }).then(result =>{
@@ -48,9 +48,9 @@ useEffect(()=>{
                     <div className='row'>
                         {newProducts?.map((p ,index)=>(
                                  <div key={index} className="col-sm pcol p-5 ">
-                                 <Link className='p-link' to={`/product/${p.id}`}>
+                                 <Link className='p-link' to={`/product/${p.product_id}`}>
                                  <div className="card" data-aos='zoom-in-up'>
-                                     <img className="card-img-top" src={product} />
+                                     <img className="card-img-top" src={p.main_image} />
                                      <div className='card-body'>
                                          <h4 className="card-title">{p.product_name}</h4>
                                          <div className="card-text">$<span>{p.new_price}</span></div>

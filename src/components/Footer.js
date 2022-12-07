@@ -99,10 +99,10 @@ export default function Footer(){
                    <Link href="#!" className="text-white" to="signup">SignUP</Link>
                  </li>
                  <li>
-                   <Link href="#!" className="text-white">FAQ</Link>
+                   <Link to="/faq" className="text-white">FAQ</Link>
                  </li>
                  <li>
-                   <Link href="#!" className="text-white">Privacy Policy</Link>
+                   <Link to='/privacy-policy' className="text-white">Privacy Policy</Link>
                  </li>
                </ul>
              </div>

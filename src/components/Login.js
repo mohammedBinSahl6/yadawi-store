@@ -1,39 +1,54 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import login from '../imgs/login.svg'
+import axios from 'axios';
+export let apiUrl = process.env.REACT_APP_BASE_API_URL
 
 const Login = ()=>{
+    const navigate = useNavigate()
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
 
+
+
     const submitLogin=(e)=>{
         e.preventDefault()
-            const body ={
-                email:email,
-                password:password
-            }
-            let header = new Headers()
-            header.append('Content-Type','application/json');
-            let requestOption={
-                method:'POST',
-                body:JSON.stringify(body),
-                headers:header
-            }
-            let apiUrl = process.env.REACT_APP_BASE_API_URL
-            fetch(`${apiUrl}/login`,requestOption).then(response=>{
-                return response.json()
-            }).then(result=>{
-                console.log(result)
-            }).catch(err=>{
-                console.log(err)
-            })
+        const body ={
+            email:email,
+            password:password
+        }
+        axios.post(`${apiUrl}/login`,body)
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+            // let header = new Headers()
+            // header.append('Content-Type','application/json');
+            // header.append('Access-Control-Allow-Origin','*')
+            // let requestOption={
+            //     method:'POST',
+            //     body:JSON.stringify(body),
+            //     headers:header
+            // }
+            // let apiUrl = process.env.REACT_APP_BASE_API_URL
+            // fetch(`${apiUrl}/login`,requestOption).then(response=>{
+            //     return response.json()
+            // }).then(result=>{
+            //     console.log(result)
+            //     navigate('/')
+            // }).catch(err=>{
+            //     console.log(err)
+            //     alert(err?.error||'invalid user')
+            // })
     }
     return (
         <div className="login">
         <div className="container-fluid">
         
            
-            <div className="row starter">
+            <div className="row ">
                 <div className="col-sm-6 ">
                 <div className="row">
             <h1 className=" text-center my-5">Login</h1>
