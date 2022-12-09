@@ -1,4 +1,4 @@
-import '../privacy.css'
+import '../css/privacy.css'
 import photo from "../imgs/sec.png"
 const Privacy = () => {
   return (

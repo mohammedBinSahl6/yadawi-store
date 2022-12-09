@@ -1,32 +1,11 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo { 
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
+
+
+
+
 
 @keyframes App-logo-spin {
   from {
@@ -38,16 +17,8 @@
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
 
-body {
-  min-height: 100vh;
-}
+
 
 /* -----------------company----------------------- */
 .company {
@@ -62,12 +33,12 @@ body {
   justify-content: center;
 }
 
-.img {
+.img-about {
   width: 100%;
   margin: 1rem 0rem 0rem 2rem;
 }
 
-.img img {
+.img-about img {
   width: 100%;
 }
 
@@ -91,26 +62,36 @@ body {
 }
 
 /* ----------------------------------------------- */
-.team {
+.team-head {
   display: flex;
   justify-content: center;
 }
 
-.team span {
+.team-head span {
   font-size: 2.5rem;
   font-weight: bold;
   border-bottom: 4px solid black;
 }
 
- .container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+
+.team .link{
+  text-decoration: none
+}
+.team .card{
+  width: 33vh;
 }
 
-.card {
+.team .link i{
+  color: white;
+  transition: 0.4s;
+  font-size: 6vh;
+  padding: 0 0.6em !important;
+}
+
+.team .link i:hover{
+  color: aquamarine;
+}
+.card-about {
   position: relative;
 
   max-width: 350px;
@@ -120,11 +101,6 @@ body {
   /* box-shadow: 0 5px 25px rgba(1, 1, 1, 0.1); */
 }
 
-.card-image {
-  max-height: 50vh;
-  overflow: hidden;
-  display: flex;
-}
 
 .card-image img {
   max-width: 100%;

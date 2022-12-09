@@ -291,7 +291,7 @@ tr .img-pro{
   }
 }
 
-.container>#hh2{
+.container .row #hh2{
   text-align: center;
   background-color: #ffffff !important;
   font-weight: bold !important;

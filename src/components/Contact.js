@@ -2,7 +2,9 @@
 const Contact = () => {
   return (
     <div class="container starter">
+      <div className="row p-5">
       <h2 id="hh2">Contact</h2>
+      </div>
       <div>
         <div className="formbold-main-wrapper">
           {/* Author: FormBold Team */}

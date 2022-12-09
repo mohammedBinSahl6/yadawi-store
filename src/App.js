@@ -1,7 +1,6 @@
 import { createContext, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
-import Counter from './components/Counter';
 import HomePage from './components/HomePage';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
