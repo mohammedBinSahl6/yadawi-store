@@ -8,11 +8,11 @@ export default function Navbar(){
                 <a className="navbar-brand" href="/">
                     <img className="logo" src={whiteLogo} />
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span className="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <div className="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul className="navbar-nav">
                     <li className="nav-item">
                         <Link to="/" className="nav-link">Home</Link>

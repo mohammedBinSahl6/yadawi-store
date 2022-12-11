@@ -1,6 +1,7 @@
 import { createContext, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
+import './css/mobile.css'
 import HomePage from './components/HomePage';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
@@ -40,7 +41,7 @@ function App() {
       
     }
    
-    
+   
     <Routes>
       <Route exact path='/' element={<HomePage />} />
       <Route exact path='/login' element={<Login />} />

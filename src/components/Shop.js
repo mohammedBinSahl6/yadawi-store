@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import product from '../imgs/product.jpg'
 import Load from './Load';
@@ -26,7 +26,9 @@ const [isLoading,setIsLoading] = useState(true)
         })
 
     }
+    const myref = useRef()
 useEffect(()=>{
+    myref.current?.scrollIntoView({behavior: 'smooth'});
     getProducts()
 
 },[])
@@ -37,7 +39,7 @@ useEffect(()=>{
         :
         
 
-        <div className="shop starter " id='top'>
+        <div className="shop starter " id='top' ref={myref}>
             <div className="row p-5">
                 <h1 className="text-center">Explore our items</h1>
             </div>

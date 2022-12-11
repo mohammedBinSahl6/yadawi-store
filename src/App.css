@@ -28,9 +28,19 @@ height: 100%;
 #land{
   width: 100%;
   height: fit-content;
-background-color: black;
+
+}
+#land {
+  background-color: #000000de;
+
 }
 
+.land-img{
+  width: 90%;
+  z-index: -1;
+  position: absolute;
+  top:3vh
+}
 
 
 .nav-link i {
@@ -125,7 +135,7 @@ footer a.btn-outline-light{
   background-color: transparent;
 }
 
-tr .img-pro{
+ .img-pro{
   width: 20vh;
 }
 .bxs-trash-alt{
@@ -303,4 +313,35 @@ tr .img-pro{
 }
 .checkout-info .form-label i{
   padding: 0 1em !important;
+}
+
+.added-msg{
+  position: fixed;
+  top: 50vh;
+  right: 50vw;
+  width: fit-content;
+  height: fit-content;
+  background-color: #000000;
+  opacity: 0;
+  animation: added 1s ;
+  z-index: 5;
+ 
+}
+@keyframes added{
+  from{
+    opacity: 1;
+
+  }
+  to{
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
+
+.cart .bxs-trash-alt{
+  cursor: pointer;
+}
+
+.cart-item{
+  border-bottom: 2px solid #666;
 }

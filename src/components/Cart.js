@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../App'
 import proda from '../imgs/product.jpg'
@@ -10,7 +10,7 @@ export default function Cart(){
 
     function increace(id){
      const selected= cart.find(item=>item.product.id === id)
-      selected.qty++
+      selected.count++
        const filtered =  cart.filter(item=>item.product.id !== id)
        console.log(filtered)
        setCart([...filtered,selected])
@@ -18,59 +18,54 @@ export default function Cart(){
     
     function decreace(id){
         const selected= cart.find(item=>item.product.id === id)
-      selected.qty--
+      selected.count--
        const filtered =  cart.filter(item=>item.product.id !== id)
-       console.log(filtered)
+       console.log('filtred is '+ filtered)
        setCart([...filtered,selected])
     }
 
     function removeItem(id){
         const filtered =  cart.filter(item=>item.product.id !== id)
-        console.log(filtered)
+        console.log('filtered is'+filtered)
         setCart(filtered)
     }
-
+    const myref = useRef()
     useEffect(()=>{
-        console.log(cart)
+        myref.current?.scrollIntoView({behavior: 'smooth'});
+        console.log('the cart ##'+ cart)
     },[])
     return (
-        <div className="cart starter" >
+        <div className="cart starter"ref={myref} >
             <div className='row'>
-                <h1 className="text-center">My Cart <i class='bx bxs-cart-alt'></i></h1>
+                <h1 className="text-center">My Cart <i className='bx bxs-cart-alt'></i></h1>
             </div>
 
             <div className="container-fluid p-5">
-                <table className="table text-center">
-                    <thead>
-                        <tr>
-                            <th>Product</th>
-                            <th>Product Name</th>
-                            <th>Price</th>
-                            <th>Count</th>
-                            <th>Total</th>
-                            <th>Remove</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                       {cart?.map((cartP, index)=>(
-                         <tr key={index}>
-                         <td><img className='img-pro' src={cartP.product.main_image}></img></td>
-                         <td>{cartP?.product.product_name}</td>
-                         <td>{cartP?.product.old_price}</td>
-                         <td><div className='d-flex f-holder counter' >
-                    <button className='btn' onClick={()=>increace(cartP.product.id)} disabled={cartP.qty==cartP.product.qty} ><i class='bx bx-plus-circle counter-btn'></i></button>
-                     <h4 className='display-6'>{cartP.qty}</h4>
-                   <button className='btn' onClick={()=>decreace(cartP.product.id)} disabled={cartP.qty==1} >  <i class='bx bx-minus-circle counter-btn'></i></button>
-                 </div>
-                 </td>
-                         <td>{cartP.qty * cartP.product.old_price}</td>
-                         <td><i className='bx bxs-trash-alt text-danger'onClick={()=>removeItem(cartP.id)}></i></td>
-                     </tr>
+    
+                <ul className='list-group'>
+                {cart?.map((cartP, index)=>(
+                        <li key={index} className='list-group-item'>
+                        <div className='cart-item p-3'>
+                            <div className=' p-3 d-flex'>
+                                <img className='img-pro' src={cartP.product.main_image} />
+                                <h5 className='px-5'>{cartP?.product.product_name}</h5>
+                                <h2><i className='bx bxs-trash-alt text-danger' onClick={removeItem}></i></h2>
+                            </div>
+                            <div className=' p-3 f-holder'>
+                                <div className='d-flex f-holder counter' >
+                                    <button className='btn' onClick={()=>increace(cartP.product.id)} disabled={cartP.count==cartP.product.qty} ><i class='bx bx-plus-circle counter-btn'></i></button>
+                                     <h4 className='display-6'>{cartP.count}</h4>
+                                    <button className='btn' onClick={()=>decreace(cartP.product.id)} disabled={cartP.count==1} >  <i class='bx bx-minus-circle counter-btn'></i></button>
+                                </div>
+                            </div>
+                            <div className='row'>
+                                <p>Item Price : ${cartP.product.old_price}</p>
+                                <h4 >TOTAL : {cartP.product.old_price * cartP.count}</h4>
+                            </div>
+                        </div>
+                    </li>
                        ))}
-
-                      
-                    </tbody>
-                </table>
+                </ul>
 
 
                 <div className='row p-5'>

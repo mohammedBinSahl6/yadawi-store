@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../App";
 import product from '../imgs/product.jpg'
 import Load from "./Load";
-
+import landImg from '../imgs/land.svg'
 export default function HomePage(){
     const [newProductsHome, setNewProducts] = useState([]);
     const [mostOrderedProducts, setMostOrderedProducts] = useState([]);
@@ -53,10 +53,12 @@ export default function HomePage(){
     },[])
     return (
         <div ref={myref}>
-            <div className="container-fluid text-white starter" id="land">
+            <div className="container-fluid text-white starter " id="land">
+                <div className="black-shape"></div>
+                <img className="land-img" src={landImg}/>
                 <div className="row p-5">
-                    <h1 className=" display-1 text-center">Welcome to</h1>
-                    <h3 className="text-center head">Yadawi Store</h3>
+                    <h1 className=" display-1 text-center text-white">Welcome to</h1>
+                    <h3 className="text-center head typed">Yadawi Store</h3>
                 </div>
                 <div className="row p-5">
                     <div className="f-holder">
