@@ -8,7 +8,7 @@ export default function Product(){
 const {cart,setCart}=useContext(CartContext)
     const[adedToCart, setAddedToCart]= useState(false)
     const [count , setCount] = useState(1);
-    const[product, setProduct]= useState({qty: 5,count : 1 });
+    const[product, setProduct]= useState({ });
     const [isLoading, setIsLoading] = useState(true)
     const param = useParams();
     console.log(param)
@@ -54,19 +54,20 @@ const {cart,setCart}=useContext(CartContext)
             console.log(product)
             if (adedToCart===false) setAddedToCart(true)
             
-            if(cart.find(item=>item.id === product.id))
+            if(cart.find(item=>item.product.product_id === product.product_id))
             {
-                const selected= cart.find(item=>item.product.id === product.id)
-                selected.count += product.count
+                const selected= cart.find(item=>item.product.product_id === product.product_id)
+                selected.count += count
                 console.log('pc',product.count)
-                const filtered =  cart.filter(item=>item.product.id !== product.id)
+                const filtered =  cart.filter(item=>item.product.product_id !== product.product_id)
                 console.log('filterd ',filtered)
                 setCart([...filtered,selected])
                 console.log('selected' , selected)
                 
                
-            }else{
-           
+            }
+            else{
+                
                  setCart([...cart,{product:product,count:count}])
                 
 

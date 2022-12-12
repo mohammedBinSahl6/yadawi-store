@@ -77,28 +77,42 @@
 .team .link{
   text-decoration: none
 }
-.team .card{
-  width: 33vh;
+
+
+
+.team-wrapper{
+ 
+  overflow-x: scroll !important;
+ height: fit-content;
+  border: 2px solid; 
+  display: flex !important;
+  width: 90%;
 }
 
-.team .link i{
+.card-about .link i{
   color: white;
   transition: 0.4s;
   font-size: 6vh;
   padding: 0 0.6em !important;
+  cursor: pointer !important;
 }
 
-.team .link i:hover{
-  color: aquamarine;
-}
+
 .card-about {
-  position: relative;
-
-  max-width: 350px;
-  width: 350px;
+  max-width: 33vh !important;
   margin: 20px;
   border-radius: 2px;
+  z-index: -1;
+  height: 95%;
+  
   /* box-shadow: 0 5px 25px rgba(1, 1, 1, 0.1); */
+}
+.team-wrapper::-webkit-scrollbar{
+  background-color:black;
+}
+.team-wrapper::-webkit-scrollbar-thumb{
+  background-color: wheat;
+  border-radius: 20%;
 }
 
 

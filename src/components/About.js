@@ -46,21 +46,122 @@ const About = ()=>{
   </div>
  
 <div className='container-fluid team'>
-  <div className='row p-5'>
-    <div className='col-sm-4 p-col'>
-      <div className='card'>
-        <img className='card-img-top'></img>
-        <div className='card-body text-white bg-dark'>
-          <h4 className='card-title'>Mohammed Bin Sahl</h4>
-          <p className='card-text'>Web Developer</p>
-          <div className='f-holder p-3'>
-            <a className='link'><i class='bx bxl-instagram-alt'></i></a>
-            <a className='link'><i class='bx bxl-github'></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+ <div className='f-holder py-5'>
+ <div className=' team-wrapper'>
+   
+   <div className=' card-about '>
+     <img className='card-img-top' src={man}></img>
+     <div className='card-body text-white bg-dark'>
+       <h4 className='card-title'>Mohammed Bin Sahl</h4>
+       <p className='card-text'>Web Developer</p>
+       <div className='f-holder p-3'>
+         <a className='link'><i class='bx bxl-instagram-alt'></i></a>
+         <a className='link'><i class='bx bxl-github'></i></a>
+       </div>
+     </div>
+   </div>
+
+   <div className=' card-about '>
+     <img className='card-img-top' src={man}></img>
+     <div className='card-body text-white bg-dark'>
+       <h4 className='card-title'>Mohammed Bin Sahl</h4>
+       <p className='card-text'>Web Developer</p>
+       <div className='f-holder p-3'>
+         <a className='link'><i class='bx bxl-instagram-alt'></i></a>
+         <a className='link'><i class='bx bxl-github'></i></a>
+       </div>
+     </div>
+   </div>
+
+   <div className=' card-about '>
+     <img className='card-img-top' src={man}></img>
+     <div className='card-body text-white bg-dark'>
+       <h4 className='card-title'>Mohammed Bin Sahl</h4>
+       <p className='card-text'>Web Developer</p>
+       <div className='f-holder p-3'>
+         <a className='link'><i class='bx bxl-instagram-alt'></i></a>
+         <a className='link'><i class='bx bxl-github'></i></a>
+       </div>
+     </div>
+   </div>
+
+   <div className=' card-about '>
+     <img className='card-img-top' src={man}></img>
+     <div className='card-body text-white bg-dark'>
+       <h4 className='card-title'>Mohammed Bin Sahl</h4>
+       <p className='card-text'>Web Developer</p>
+       <div className='f-holder p-3'>
+         <a className='link'><i class='bx bxl-instagram-alt'></i></a>
+         <a className='link'><i class='bx bxl-github'></i></a>
+       </div>
+     </div>
+   </div>
+
+   <div className=' card-about '>
+     <img className='card-img-top' src={man}></img>
+     <div className='card-body text-white bg-dark'>
+       <h4 className='card-title'>Mohammed Bin Sahl</h4>
+       <p className='card-text'>Web Developer</p>
+       <div className='f-holder p-3'>
+         <a className='link'><i class='bx bxl-instagram-alt'></i></a>
+         <a className='link'><i class='bx bxl-github'></i></a>
+       </div>
+     </div>
+   </div>
+
+   <div className=' card-about '>
+     <img className='card-img-top' src={man}></img>
+     <div className='card-body text-white bg-dark'>
+       <h4 className='card-title'>Mohammed Bin Sahl</h4>
+       <p className='card-text'>Web Developer</p>
+       <div className='f-holder p-3'>
+         <a className='link'><i class='bx bxl-instagram-alt'></i></a>
+         <a className='link'><i class='bx bxl-github'></i></a>
+       </div>
+     </div>
+   </div>
+
+   
+   <div className=' card-about '>
+     <img className='card-img-top' src={man}></img>
+     <div className='card-body text-white bg-dark'>
+       <h4 className='card-title'>Mohammed Bin Sahl</h4>
+       <p className='card-text'>Web Developer</p>
+       <div className='f-holder p-3'>
+         <a className='link'><i class='bx bxl-instagram-alt'></i></a>
+         <a className='link'><i class='bx bxl-github'></i></a>
+       </div>
+     </div>
+   </div>
+
+   
+   <div className=' card-about '>
+     <img className='card-img-top' src={man}></img>
+     <div className='card-body text-white bg-dark'>
+       <h4 className='card-title'>Mohammed Bin Sahl</h4>
+       <p className='card-text'>Web Developer</p>
+       <div className='f-holder p-3'>
+         <a className='link'><i class='bx bxl-instagram-alt'></i></a>
+         <a className='link'><i class='bx bxl-github'></i></a>
+       </div>
+     </div>
+   </div>
+
+   
+   <div className=' card-about '>
+     <img className='card-img-top' src={man}></img>
+     <div className='card-body text-white bg-dark'>
+       <h4 className='card-title'>Mohammed Bin Sahl</h4>
+       <p className='card-text'>Web Developer</p>
+       <div className='f-holder p-3'>
+         <a className='link'><i class='bx bxl-instagram-alt'></i></a>
+         <a className='link'><i class='bx bxl-github'></i></a>
+       </div>
+     </div>
+   </div>
+ 
+</div>
+ </div>
 </div>
  
 

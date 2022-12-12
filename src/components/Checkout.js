@@ -1,6 +1,19 @@
+import { useContext, useEffect, useState } from "react"
+import { CartContext } from "../App"
+
 export default function Checkout(){
+    const[total , setTotal]= useState(0)
+    const {cart} = useContext(CartContext)
+   
     
-    
+        
+       useEffect(()=>{
+        cart.forEach((p)=>(
+            setTotal( p.product.old_price * p.count)
+           ))
+       },[])
+            
+       
     
     return(
         <div className="checkout starter">
@@ -14,17 +27,17 @@ export default function Checkout(){
                         <div className="cart-review p-5">
                             <h2 className="h2">Cart Reveiw <i class='bx bxs-cart-alt'></i> </h2>
                             <ul className="list-group">
-                                <li className="list-group-item p-3">
-                                    <h4 className="name-reveiw">Product some</h4><h3>-----$44.00</h3>
-                                </li>
-                                <li className="list-group-item p-3">
-                                    <h4 className="name-reveiw">Product some</h4><h3>-----$44.00</h3>
-                                </li>
+                              {cart.map((p,index)=>(
+                                    <li key={index} className="list-group-item p-3">
+                                         <h4 className="name-reveiw">{p.count}-{p.product.product_name}</h4><h3>-----${p.product.old_price}</h3>
+                                    </li>
+                              ))}
+                            
 
                             </ul>
                             <div className="row p-5"> 
                                <div className="f-holder">
-                               <h2 className="h2">Total :<h4>88.00</h4> </h2>
+                               <h2 className="h2 text-danger">Total :{total} </h2>
                                </div>
                             </div>
                         </div>

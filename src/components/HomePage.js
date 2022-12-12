@@ -4,6 +4,9 @@ import { CartContext } from "../App";
 import product from '../imgs/product.jpg'
 import Load from "./Load";
 import landImg from '../imgs/land.svg'
+import step1 from '../imgs/craft.svg'
+import step2 from '../imgs/sell.svg'
+import step3 from '../imgs/buseniss.svg'
 export default function HomePage(){
     const [newProductsHome, setNewProducts] = useState([]);
     const [mostOrderedProducts, setMostOrderedProducts] = useState([]);
@@ -54,11 +57,10 @@ export default function HomePage(){
     return (
         <div ref={myref}>
             <div className="container-fluid text-white starter " id="land">
-                <div className="black-shape"></div>
                 <img className="land-img" src={landImg}/>
                 <div className="row p-5">
-                    <h1 className=" display-1 text-center text-white">Welcome to</h1>
-                    <h3 className="text-center head typed">Yadawi Store</h3>
+                    <h1 className=" display-1 text-center text-white" data-aos='fade-right' data-aos-duration='2000'>Welcome to</h1>
+                    <h3 className="text-center head typed" data-aos="fade-up"  data-aos-duration='2000' data-aos-delay='500' >Yadawi Store</h3>
                 </div>
                 <div className="row p-5">
                     <div className="f-holder">
@@ -71,6 +73,36 @@ export default function HomePage(){
                 </div>
             </div>
 
+            <div className="container-fluid steps-section">
+                <div className="row p-5">
+                    <div className="col-sm-6 p-5">
+                        <img className="img-step" src={step1} data-aos='zoom-in-up' />
+                    </div>
+                    <div className="col-sm-6 p-5">
+                        <h3 className="" data-aos='fade-right'>Be creative in your craft</h3>
+                        <p data-aos='fade-down' data-aos-delay='500'>Your handmade is your product. Show the world somthing about your culture.</p>
+                    </div>
+                </div>
+                <div className="row p-5">
+                    <div className="col-sm-6 p-5">
+                        <h3 className="" data-aos='fade-left'>Sell your product</h3>
+                        <p data-aos='fade-down' data-aos-delay='500'>Sell your creatives with best price , and earn money from your handmades .</p>
+                    </div>
+                    <div className="col-sm-6 p-5">
+                        <img className="img-step" src={step2} data-aos='zoom-in-up' />
+                    </div>
+                </div>
+                <div className="row p-5">
+                    <div className="col-sm-6 p-5">
+                        <img className="img-step" src={step3} data-aos='zoom-in-up' />
+                    </div>
+                    <div className="col-sm-6 p-5">
+                        <h3 className="" data-aos='fade-right'>Start your own Business</h3>
+                        <p data-aos='fade-down' data-aos-delay='500'>Explore the other cultures and increace your sells and your business will comes to you!</p>
+                    </div>
+                    </div>
+            </div>
+
             <div className="container-fluid" id="products">
                 <div className="row p-5">
                     <h1 className="text-center">Our Most Ordered Products</h1>
@@ -81,7 +113,8 @@ export default function HomePage(){
                     <div className="row pt-3">
                    {mostOrderedProducts.map((p,index)=>(
                      <div key={index} className="col pcol p-5 ">
-                     <div className="card" data-aos='zoom-in-up'>
+                        <Link className="p-link"  to={`/product/${p.product_id}`}>
+                        <div className="card" data-aos='zoom-in-up'>
                          <img className="card-img-top" src={p.main_image} />
                          <div className='card-body'>
                              <h4 className="card-title">{p.product_name}</h4>
@@ -89,6 +122,8 @@ export default function HomePage(){
                              <button className="btn btn-dark m-3" onClick={()=>AddToCart(p)}>Add to cart <i className='bx bxs-cart-add'></i></button>
                          </div>
                      </div>
+                        </Link>
+                     
                  </div>
                    ))}
                    
@@ -102,12 +137,16 @@ export default function HomePage(){
 
                 <div className="container-fluid" id="new-products">
                     <div className="row p-5">
-                        <h1 className="text-center">Our New Ptoducts</h1>
+                        <h1 className="text-center">Our New Products</h1>
                     </div>
                   { isLoading ? <Load /> :
                   
                   <div className="row p-5">
-                        {newProductsHome.map((p,index)=>(
+                       
+                      { newProductsHome.length===0 ? <div className="h1 text-center p-5">Coming soon ...</div>
+                      :
+
+                        newProductsHome.map((p,index)=>(
                            <div key={index} className="col pcol p-5">
                            <div className="card"  data-aos='zoom-in-up' data-aos-delay='600' >
                                <img className="card-img-top" src={product} />

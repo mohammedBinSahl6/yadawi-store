@@ -39,7 +39,8 @@ height: 100%;
   width: 90%;
   z-index: -1;
   position: absolute;
-  top:3vh
+  top:3vh;
+  transform: translateX(0);
 }
 
 
@@ -344,4 +345,25 @@ footer a.btn-outline-light{
 
 .cart-item{
   border-bottom: 2px solid #666;
+}
+
+.img-step{
+  width: 100%;
+}
+
+.rmv-msg{
+  position: fixed;
+  top: 50%;
+  animation: removed 1s;
+  opacity: 0;
+}
+@keyframes removed {
+  from{
+    opacity: 1;
+
+  }
+  to{
+    opacity: 0;
+    transform: translateX(40px);
+  }
 }

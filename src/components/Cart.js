@@ -5,7 +5,7 @@ import proda from '../imgs/product.jpg'
 
 export default function Cart(){
     const {cart,setCart}= useContext(CartContext)
-
+    const[removed, setRemoved]= useState(false)
 
 
     function increace(id){
@@ -25,9 +25,10 @@ export default function Cart(){
     }
 
     function removeItem(id){
-        const filtered =  cart.filter(item=>item.product.id !== id)
+        const filtered =  cart.filter(item=>item.product.product_id === id)
         console.log('filtered is'+filtered)
         setCart(filtered)
+        setRemoved(true)
     }
     const myref = useRef()
     useEffect(()=>{
@@ -39,17 +40,21 @@ export default function Cart(){
             <div className='row'>
                 <h1 className="text-center">My Cart <i className='bx bxs-cart-alt'></i></h1>
             </div>
+           {removed ?  <div className='alert alert-danger rmv-msg'>
+                <h2 className='text-center'>Removed</h2>
+            </div>:null}
 
             <div className="container-fluid p-5">
     
                 <ul className='list-group'>
-                {cart?.map((cartP, index)=>(
+                { cart.length===0 ?<div className='h1 text-center p-5'>The cart is empty..</div>:
+                cart?.map((cartP, index)=>(
                         <li key={index} className='list-group-item'>
                         <div className='cart-item p-3'>
                             <div className=' p-3 d-flex'>
                                 <img className='img-pro' src={cartP.product.main_image} />
                                 <h5 className='px-5'>{cartP?.product.product_name}</h5>
-                                <h2><i className='bx bxs-trash-alt text-danger' onClick={removeItem}></i></h2>
+                                <h2><i className='bx bxs-trash-alt text-danger' onClick={removeItem} onMouseLeave={()=>setRemoved(false)}></i></h2>
                             </div>
                             <div className=' p-3 f-holder'>
                                 <div className='d-flex f-holder counter' >
