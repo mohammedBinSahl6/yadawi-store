@@ -1,12 +1,4 @@
 
-
-
-
-
-
-
-
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -282,7 +274,7 @@
   50% {
     left: 0;
     width: 12px;
-    height: 12px;
+    height: 19px;
   }
   100% {
     left: 0;

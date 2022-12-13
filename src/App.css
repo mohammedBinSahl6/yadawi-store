@@ -367,3 +367,15 @@ footer a.btn-outline-light{
     transform: translateX(40px);
   }
 }
+
+.link{
+  color: black;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.link:hover{
+  color: #07074d;
+  font-weight: 500;
+}
+

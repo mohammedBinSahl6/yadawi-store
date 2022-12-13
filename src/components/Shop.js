@@ -30,6 +30,7 @@ const [isLoading,setIsLoading] = useState(true)
 useEffect(()=>{
     myref.current?.scrollIntoView({behavior: 'smooth'});
     getProducts()
+    console.log('the products$$ : ', newProducts)
 
 },[])
     return (

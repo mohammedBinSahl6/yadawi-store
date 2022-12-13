@@ -35,20 +35,7 @@ export default function HomePage(){
     
         }
 
-        const AddToCart=(product)=>{
-            console.log(product)
-            if(cart.find(item=>item.id === product.id))
-            {
-                const selected= cart.find(item=>item.id === product.id)
-                selected.count = product.count + selected.count
-                const filtered =  cart.filter(item=>item.id !== product.id)
-                console.log(filtered)
-                setCart([...filtered,selected])
-            }else{
-                setCart([...cart,{product:product,qty:count}])
-            }
-           
-        }
+       
     const myref= useRef()
     useEffect(()=>{
         myref.current?.scrollIntoView({behavior: 'smooth'});
@@ -119,7 +106,7 @@ export default function HomePage(){
                          <div className='card-body'>
                              <h4 className="card-title">{p.product_name}</h4>
                              <div className="card-text">${p.old_price}</div>
-                             <button className="btn btn-dark m-3" onClick={()=>AddToCart(p)}>Add to cart <i className='bx bxs-cart-add'></i></button>
+                             <button className="btn btn-dark m-3" >Veiw more details</button>
                          </div>
                      </div>
                         </Link>
@@ -153,7 +140,7 @@ export default function HomePage(){
                                <div className='card-body'>
                                    <h4 className="card-title">{p.product_name}</h4>
                                    <div className="card-text">${p.old_price}</div>
-                                   <button className="btn btn-dark m-3" onClick={()=>AddToCart(p)}>Add to cart <i className='bx bxs-cart-add'></i></button>
+                                   <button className="btn btn-dark m-3" >Veiw more details</button>
                                 </div>
                            </div>
                        </div>

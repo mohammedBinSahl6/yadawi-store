@@ -1,7 +1,6 @@
 import { useContext, useEffect, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import { CartContext } from '../App';
-import product_img from '../imgs/product.jpg'
 import Load from './Load';
 export default function Product(){
 
@@ -11,7 +10,8 @@ const {cart,setCart}=useContext(CartContext)
     const[product, setProduct]= useState({ });
     const [isLoading, setIsLoading] = useState(true)
     const param = useParams();
-    console.log(param)
+    console.log(param);
+    const selectedItem= cart.find(item=>item.product.product_id === product.product_id)
 
     function increace(){
         setCount(count +1)
@@ -46,6 +46,7 @@ const {cart,setCart}=useContext(CartContext)
         useEffect(()=>{
             myref.current?.scrollIntoView({behavior: 'smooth'});
             getProduct()
+            console.log('q' , product.qty)
         },[])
       
        
@@ -58,6 +59,7 @@ const {cart,setCart}=useContext(CartContext)
             {
                 const selected= cart.find(item=>item.product.product_id === product.product_id)
                 selected.count += count
+                
                 console.log('pc',product.count)
                 const filtered =  cart.filter(item=>item.product.product_id !== product.product_id)
                 console.log('filterd ',filtered)
@@ -105,9 +107,9 @@ const {cart,setCart}=useContext(CartContext)
                     <p className='p-3'>{product?.product_desc||'lorem ipsum asbjkbasjkfasjkfhasklfnasklmfklasfmasklfmasklfaskfmaskfmaksfmnak.sfmnak.sfnask.fmaskfmaksfma;lsfm;lasfklas'}</p>
                     <button className='btn btn-dark'
                     onClick={AddToCart} onMouseLeave={()=>setAddedToCart(false)}
-                    disabled={product.count===product.qty}
+                    disabled={cart.selectedItem?.count=== product?.product?.qty }
                     >Add to cart  <i className='bx bxs-cart-add'></i></button>
-                    <Link to='/shop'className='p-link p-3' >Keep Shopping</Link>
+                    <Link to='/shop'className='link p-3' >Keep Shopping</Link>
                 </div>
                 </div>
                 
