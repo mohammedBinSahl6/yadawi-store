@@ -2,12 +2,79 @@
    
     #land .land-img{
         top: -16vh;
+        margin: 0;
+        width: 100%;
+        
+        
+    }
+    #land{
+        background-color: #000000a9;
+     
     }
 
    
 
+    #land .head{
+        font-size: 50px;
+    }
 
+    .headers-holder{
+        padding: 1em !important;
+    }
 
+    .img-step{
+        width: 100%;
+    }
 
+    footer .vision-in-footer{
+        font-size: 16px;
+    }
 
-  }
+    .open-cart{
+        position: fixed;
+        width: 70px;
+        height: 70px;
+        bottom: 5%;
+        right: 5%;
+        border-radius: 100%;
+        background-color: black;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        font-size: 5vh;
+        color: white;
+        text-decoration: none;
+margin: 0;
+        z-index: 666;
+    }
+
+    .cart-nav{
+        display: none;
+    }
+
+    .img-about {
+        display: none;
+    }
+
+    .welcome-about{
+        font-size: 30px;
+        padding: 5em 0 !important;
+    }
+
+    .welcome-about h1{
+        font-weight: 700;
+        font-size: 40px;
+        
+    }
+
+    .img-product-detail{
+        width: 70%;
+
+    }
+
+    .remove-btn{
+        position: absolute;
+        top: 2%;
+        right: 1%;
+    }
+}

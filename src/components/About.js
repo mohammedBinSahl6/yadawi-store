@@ -20,7 +20,8 @@ const About = ()=>{
 </>
   <div className="about-section starter">
     <h1 className='text-center mt-5 main-title'>About Us</h1>
-<h2 data-aos='fade-down' data-aos-duration='1000' className='text-center p-5'> Welcome To Yadawi store  </h2>
+<h2 data-aos='fade-down' data-aos-duration='1000' className='text-center  welcome-about'> Welcome To
+<h1 className='text-center'> Yadawi store</h1>  </h2>
     
   </div>
   <div className="company">
@@ -30,9 +31,9 @@ const About = ()=>{
         alt=""
       />
     </div>
-    <div className="company-info">
+    <div className="company-info p-3">
       
-     <span className='display-4 text-dark'>products</span> <span className="our">FOR EVERYONE</span>
+     <span className='display-4 text-dark'>Products</span> <span className="our">For Everyone</span>
       
       <p>
         <b>Yadawi store</b> is a e-commerce website dedicated for sharing stock

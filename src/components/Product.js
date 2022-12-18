@@ -2,6 +2,7 @@ import { useContext, useEffect, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import { CartContext } from '../App';
 import Load from './Load';
+import OpenCart from './OpenCart';
 export default function Product(){
 
 const {cart,setCart}=useContext(CartContext)
@@ -90,7 +91,7 @@ const {cart,setCart}=useContext(CartContext)
                  <p className='text-center text-white'>Added to Cart <i className='bx bxs-cart-download' ></i></p>
                 </div> : ()=>setAddedToCart(false)}
                <div className="col-sm-6 p-5">
-                    <img className="img-fluid" src={product.main_image} />
+                    <img className="img-fluid img-product-detail" src={product.main_image} />
                 </div>
                 <div className='col-sm-6 p-5'>
                     <h1 className='product-name'>{product?.product_name||'braclet 1'}</h1>
@@ -107,14 +108,14 @@ const {cart,setCart}=useContext(CartContext)
                     <p className='p-3'>{product?.product_desc||'lorem ipsum asbjkbasjkfasjkfhasklfnasklmfklasfmasklfmasklfaskfmaskfmaksfmnak.sfmnak.sfnask.fmaskfmaksfma;lsfm;lasfklas'}</p>
                     <button className='btn btn-dark'
                     onClick={AddToCart} onMouseLeave={()=>setAddedToCart(false)}
-                    disabled={cart.selectedItem?.count=== product?.product?.qty }
+                    
                     >Add to cart  <i className='bx bxs-cart-add'></i></button>
                     <Link to='/shop'className='link p-3' >Keep Shopping</Link>
                 </div>
                 </div>
                 
                 }
-            
+                                    <OpenCart />
         </div>
     )
 }

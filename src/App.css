@@ -35,6 +35,9 @@ height: 100%;
 
 }
 
+.headers-holder{
+  padding: 5em !important
+}
 .land-img{
   width: 90%;
   z-index: -1;
@@ -61,7 +64,14 @@ height: 100%;
 
 .card{
   width: 33vh;
+  height: 50vh;
 }
+
+.card-img-top{
+  width: 100%;
+  height: 40%;
+}
+
 .si-img{
   width : 80% !important
 }
@@ -346,11 +356,22 @@ footer a.btn-outline-light{
 .cart-item{
   border-bottom: 2px solid #666;
 }
-
+.remove-btn{
+  position: absolute;
+  top: 2%;
+  right: 1%;
+}
 .img-step{
-  width: 100%;
+  width: 60%;
 }
 
+.card{
+  overflow: hidden !important;
+}
+
+.open-cart{
+  display: none;
+}
 .rmv-msg{
   position: fixed;
   top: 50%;

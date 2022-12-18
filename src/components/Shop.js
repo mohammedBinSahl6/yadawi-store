@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import product from '../imgs/product.jpg'
 import Load from './Load';
+import OpenCart from './OpenCart';
 export default function Shop(){
    
 const [newProducts, setNewProducts] = useState([]);
@@ -47,7 +48,7 @@ useEffect(()=>{
 
             <div className="row">
                 
-                <div className='col-sm products-body'>
+                <div className='col-sm products-body p-3'>
                     <div className='row'>
                         {newProducts?.map((p ,index)=>(
                                  <div key={index} className="col-sm pcol p-5 ">
@@ -79,6 +80,8 @@ useEffect(()=>{
 
 
         </div>}
+
+                                <OpenCart />
         </div>
     )
 }

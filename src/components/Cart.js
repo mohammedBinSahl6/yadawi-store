@@ -47,14 +47,19 @@ export default function Cart(){
             <div className="container-fluid p-5">
     
                 <ul className='list-group'>
-                { cart.length===0 ?<div className='h1 text-center p-5'>The cart is empty..</div>:
+                { cart.length===0 ?<div className='h1 text-center p-3'>The cart is empty..</div>:
                 cart?.map((cartP, index)=>(
                         <li key={index} className='list-group-item'>
                         <div className='cart-item p-3'>
-                            <div className=' p-3 d-flex'>
-                                <img className='img-pro' src={cartP.product.main_image} />
-                                <h5 className='px-5'>{cartP?.product.product_name}</h5>
-                                <h2><i className='bx bxs-trash-alt text-danger' onClick={removeItem} onMouseLeave={()=>setRemoved(false)}></i></h2>
+                        <h2 className='remove-btn'><i className='bx bxs-trash-alt text-danger' onClick={removeItem} onMouseLeave={()=>setRemoved(false)}></i></h2>
+                            <div className=' p-3 row '>
+                               <div className='col-sm'>
+                               <img className='img-pro' src={cartP.product.main_image} />
+                               </div>
+                                <div className='col-sm d-flex'>
+                                <h5 className=''>{cartP?.product.product_name}</h5>
+                               
+                                </div>
                             </div>
                             <div className=' p-3 f-holder'>
                                 <div className='d-flex f-holder counter' >
@@ -70,6 +75,7 @@ export default function Cart(){
                         </div>
                     </li>
                        ))}
+                       
                 </ul>
 
 
