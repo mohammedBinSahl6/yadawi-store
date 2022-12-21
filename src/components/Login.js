@@ -20,9 +20,11 @@ const Login = ()=>{
         axios.post(`${apiUrl}/login`,body)
           .then(function (response) {
             console.log(response);
+            navigate('/shop')
           })
           .catch(function (error) {
             console.log(error);
+            alert('failed to login')
           });
             // let header = new Headers()
             // header.append('Content-Type','application/json');

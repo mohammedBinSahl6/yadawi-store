@@ -29,7 +29,7 @@ export default function SignUP (){
               .catch(function (error) {
                 alert('registered failed');
                 console.log(error)
-                navigate('/')
+                
               });
     }
     return(

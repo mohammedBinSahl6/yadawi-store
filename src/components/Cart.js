@@ -25,7 +25,7 @@ export default function Cart(){
     }
 
     function removeItem(id){
-        const filtered =  cart.filter(item=>item.product.product_id === id)
+        const filtered =  cart.filter(item=>item.product.product_id !== id)
         console.log('filtered is'+filtered)
         setCart(filtered)
         setRemoved(true)
@@ -51,7 +51,7 @@ export default function Cart(){
                 cart?.map((cartP, index)=>(
                         <li key={index} className='list-group-item'>
                         <div className='cart-item p-3'>
-                        <h2 className='remove-btn'><i className='bx bxs-trash-alt text-danger' onClick={removeItem} onMouseLeave={()=>setRemoved(false)}></i></h2>
+                        <h2 className='remove-btn'><i className='bx bxs-trash-alt text-danger' onClick={()=>removeItem(cartP.product.product_id)} onMouseLeave={()=>setRemoved(false)}></i></h2>
                             <div className=' p-3 row '>
                                <div className='col-sm'>
                                <img className='img-pro' src={cartP.product.main_image} />

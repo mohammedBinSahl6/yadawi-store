@@ -1,19 +1,22 @@
 import { useContext, useEffect, useRef, useState } from 'react'
-import { Link, useParams } from 'react-router-dom';
+import { Link, Route, Routes, useNavigate, useParams } from 'react-router-dom';
 import { CartContext } from '../App';
+import AddedModal from './AddedModal';
 import Load from './Load';
 import OpenCart from './OpenCart';
 export default function Product(){
 
 const {cart,setCart}=useContext(CartContext)
     const[adedToCart, setAddedToCart]= useState(false)
+    const[added, setAdded]= useState(false)
+
     const [count , setCount] = useState(1);
     const[product, setProduct]= useState({ });
     const [isLoading, setIsLoading] = useState(true)
     const param = useParams();
     console.log(param);
     const selectedItem= cart.find(item=>item.product.product_id === product.product_id)
-
+    const nav = useNavigate()
     function increace(){
         setCount(count +1)
         setProduct({...product, count : count })
@@ -55,7 +58,7 @@ const {cart,setCart}=useContext(CartContext)
             
             console.log(product)
             if (adedToCart===false) setAddedToCart(true)
-            
+            setAdded(true)
             if(cart.find(item=>item.product.product_id === product.product_id))
             {
                 const selected= cart.find(item=>item.product.product_id === product.product_id)
@@ -66,6 +69,9 @@ const {cart,setCart}=useContext(CartContext)
                 console.log('filterd ',filtered)
                 setCart([...filtered,selected])
                 console.log('selected' , selected)
+
+               
+               
                 
                
             }
@@ -108,7 +114,7 @@ const {cart,setCart}=useContext(CartContext)
                     <p className='p-3'>{product?.product_desc||'lorem ipsum asbjkbasjkfasjkfhasklfnasklmfklasfmasklfmasklfaskfmaskfmaksfmnak.sfmnak.sfnask.fmaskfmaksfma;lsfm;lasfklas'}</p>
                     <button className='btn btn-dark'
                     onClick={AddToCart} onMouseLeave={()=>setAddedToCart(false)}
-                    
+                    disabled={added}
                     >Add to cart  <i className='bx bxs-cart-add'></i></button>
                     <Link to='/shop'className='link p-3' >Keep Shopping</Link>
                 </div>
@@ -116,6 +122,8 @@ const {cart,setCart}=useContext(CartContext)
                 
                 }
                                     <OpenCart />
+
+                                    {added? <AddedModal /> : null}
         </div>
     )
 }

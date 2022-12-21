@@ -77,4 +77,20 @@ margin: 0;
         top: 2%;
         right: 1%;
     }
+
+    .added-card{
+        width: 90%;
+        height: fit-content;
+        position: fixed;
+        background-color: #ffffff;
+        top: 23%;
+          border: #000000 2px solid;
+          left: 3%;
+        transition: 0.4s;
+      animation: showing 0.5s ;
+      }
+      
+      .added-cart-icon{
+        width: 40%;
+      }
 }
