@@ -46,7 +46,7 @@ export default function HomePage(){
             <div className="container-fluid text-white starter " id="land">
                 <img className="land-img" src={landImg} />
                 <div className="row headers-holder">
-                    <h1 className=" display-1 text-center text-white" data-aos='fade-right' data-aos-duration='2000'>Welcome to</h1>
+                    <h1 className=" display-1 text-center text-white" data-aos='fade-up' data-aos-duration='2000'>Welcome to</h1>
                     <h3 className="text-center head " data-aos="fade-up"  data-aos-duration='2000' data-aos-delay='500' >Yadawi Store</h3>
                 </div>
                 <div className="row p-5">
@@ -68,13 +68,13 @@ export default function HomePage(){
                        </div>
                     </div>
                     <div className="col-sm-6 p-3">
-                        <h3 className="" data-aos='fade-right'>Be creative in your craft</h3>
+                        <h3 className="" data-aos='fade-up'>Be creative in your craft</h3>
                         <p data-aos='fade-down' data-aos-delay='500'>Your handmade is your product. Show the world somthing about your culture.</p>
                     </div>
                 </div>
                 <div className="row p-5">
                     <div className="col-sm-6 p-3">
-                        <h3 className="" data-aos='fade-left'>Sell your product</h3>
+                        <h3 className="" data-aos='fade-up'>Sell your product</h3>
                         <p data-aos='fade-down' data-aos-delay='500'>Sell your creatives with best price , and earn money from your handmades .</p>
                     </div>
                     <div className="col-sm-6 p-3">
@@ -86,7 +86,7 @@ export default function HomePage(){
                         <img className="img-step" src={step3} data-aos='zoom-in-up' />
                     </div>
                     <div className="col-sm-6 p-3">
-                        <h3 className="" data-aos='fade-right'>Start your own Business</h3>
+                        <h3 className="" data-aos='fade-up'>Start your own Business</h3>
                         <p data-aos='fade-down' data-aos-delay='500'>Explore the other cultures and increace your sells and your business will comes to you!</p>
                     </div>
                     </div>
