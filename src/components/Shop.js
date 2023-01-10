@@ -1,12 +1,13 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { staticData } from '../data';
 import product from '../imgs/product.jpg'
 import Load from './Load';
 import OpenCart from './OpenCart';
 export default function Shop(){
    
-const [newProducts, setNewProducts] = useState([]);
+const [newProducts, setNewProducts] = useState(staticData);
 const [isLoading,setIsLoading] = useState(true)
     const getProducts = ()=>{
         let requestOption = {
@@ -54,10 +55,10 @@ useEffect(()=>{
                                  <div key={index} className="col-sm pcol p-5 ">
                                  <Link className='p-link' to={`/product/${p.product_id}`}>
                                  <div className="card" data-aos='zoom-in-up'>
-                                     <img className="card-img-top" src={p.main_image} />
+                                     <img className="card-img-top" src={require(p.main_image)} />
                                      <div className='card-body'>
                                          <h4 className="card-title">{p.product_name}</h4>
-                                         <div className="card-text">$<span>{p.new_price}</span></div>
+                                         <div className="card-text">$<span>{p.old_price}</span></div>
                                          <button className="btn btn-dark m-3">Add to cart <i className='bx bxs-cart-add'></i></button>
                                      </div>
                                  </div>
