@@ -7,33 +7,35 @@ import step1 from '../imgs/craft.svg'
 import step2 from '../imgs/sell.svg'
 import step3 from '../imgs/buseniss.svg'
 import OpenCart from "./OpenCart";
+import { mostProducts } from "../../data";
 export default function HomePage(){
-    const [newProductsHome, setNewProducts] = useState([]);
-    const [mostOrderedProducts, setMostOrderedProducts] = useState([]);
-    const[isLoading, setIsLoading] = useState(true)
+    // const [newProductsHome, setNewProducts] = useState([]);
+    // const [mostOrderedProducts, setMostOrderedProducts] = useState([]);
+    // const[isLoading, setIsLoading] = useState(true)
     
    
-        const getProducts = ()=>{
-            let requestOption = {
-                method : 'GET'
-            }
-            let apiURL = process.env.REACT_APP_BASE_API_URL
-            fetch(`${apiURL}/home`,requestOption).then(response => {
-                console.log(response)
-                return response.json()
-            }).then(result =>{
-                const {new_5_products,most_ordered_products} = result;
-                setNewProducts(new_5_products)
-                setMostOrderedProducts(most_ordered_products)
-                console.log(result)
-                setIsLoading(false)
-            }).catch(error =>{
-                console.log(error)
-                setIsLoading(false)
+    //     const getProducts = ()=>{
+    //         let requestOption = {
+    //             method : 'GET'
+    //         }
+    //         let apiURL = process.env.REACT_APP_BASE_API_URL
+    //         fetch(`${apiURL}/home`,requestOption).then(response => {
+    //             console.log(response)
+    //             return response.json()
+    //         }).then(result =>{
+    //             const {new_5_products,most_ordered_products} = result;
+    //             setNewProducts(new_5_products)
+    //             setMostOrderedProducts(most_ordered_products)
+    //             console.log(result)
+    //             setIsLoading(false)
+    //         }).catch(error =>{
+    //             console.log(error)
+    //             setIsLoading(false)
                
-            })
+    //         })
     
-        }
+    //     }
+    const [most, setMost] = useState(mostProducts)
 
        
     const myref= useRef()
@@ -97,7 +99,7 @@ export default function HomePage(){
                 <div className="row p-3">
                     <h1 className="text-center">Our Most Ordered Products</h1>
                 </div>
-                {isLoading ? <Load /> 
+                {/* {isLoading ? <Load /> 
                 :
                     
                     <div className="row pt-3">
@@ -118,7 +120,27 @@ export default function HomePage(){
                    ))}
                    
 
-                </div>}
+                </div>} */}
+
+                        <div className="row p-3">
+                              {most.map((m)=>(
+                                 <div key={p.id} className="col-4-sm p-3 f-holder">
+                                <Link className="empty-link" to={`/product/${p.id}`}>
+                                 <article class="card">
+                                       <div class="temporary_text">
+                                           <img className="pro-imge" src={p.image}/>
+                                       </div>
+                                      <div class="card_content">
+                                          <span class="card_title">{p.title}</span>
+                                          <span class="card_subtitle">Perfect Product for you coming from our Culture.</span>
+                                          <p class="card_description">Lorem ipsum dolor, sit amet  expedita exercitationem recusandae aut dolor tempora aperiam itaque possimus at, cupiditate earum, quae repudiandae aspernatur? Labore minus soluta consequatur placeat.</p>
+                          
+                                      </div>
+                                  </article>
+                                  </Link>
+                                 </div>
+                              ))}
+                          </div>
                { mostOrderedProducts &&
                <div className="f-holder">
                     <Link to='/shop#top' className="btn btn-dark my-3"  data-aos='zoom-in-up' data-aos-delay='300'>Show more items</Link>
