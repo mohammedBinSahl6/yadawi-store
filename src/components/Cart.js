@@ -24,7 +24,7 @@ export default function Cart() {
   }
 
   function removeItem(id) {
-    const filtered = cart.filter((item) => item.id !== id);
+    const filtered = cart.filter((item) => item.id != id);
     console.log("filtered is" + filtered);
     setCart(filtered);
     setRemoved(true);
