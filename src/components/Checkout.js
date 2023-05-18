@@ -7,7 +7,7 @@ export default function Checkout() {
 	const { cart } = useContext(CartContext);
 
 	useEffect(() => {
-		cart.forEach((p) => setTotal(p.product.old_price * p.count));
+		cart.forEach((p) => setTotal(prev => prev +=( p.price * p.count)));
 	}, []);
 
 	return (
@@ -27,9 +27,9 @@ export default function Checkout() {
 								{cart.map((p, index) => (
 									<li key={index} className='list-group-item p-3'>
 										<h4 className='name-reveiw'>
-											{p.count}-{p.product.product_name}
+											{p.count}-{p.title}
 										</h4>
-										<h3>-----${p.product.old_price}</h3>
+										<h3>-----${p.price}</h3>
 									</li>
 								))}
 							</ul>
