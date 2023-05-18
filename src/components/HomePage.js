@@ -155,8 +155,8 @@ export default function HomePage() {
                 </div>} */}
 
         <div className="row p-3">
-          {most.map((p) => (
-            <div key={p.id} className="col-4-sm p-3 f-holder">
+          {mostOrderedProducts.map((p) => (
+            <div key={p.id} className="col-sm-4  f-holder">
               <Link className="empty-link" to={`/product/${p.id}`}>
                 <article class="card">
                   <div class="temporary_text">
@@ -200,8 +200,8 @@ export default function HomePage() {
               {newProductsHome.length === 0 ? (
                 <div className="h1 text-center p-3">Coming soon ...</div>
               ) : (
-                newProductsHome.map((p, index) => (
-                  <div key={p.id} className="col-4-sm p-3 f-holder">
+                newProductsHome.map((p) => (
+                  <div key={p.id} className="col-sm-4  f-holder">
                     <Link className="empty-link" to={`/product/${p.id}`}>
                       <article class="card">
                         <div class="temporary_text">
