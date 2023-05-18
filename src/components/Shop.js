@@ -1,13 +1,13 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { staticData } from '../data';
+import { products } from '../data';
 import product from '../imgs/product.jpg'
 import Load from './Load';
 import OpenCart from './OpenCart';
 export default function Shop(){
    
-const [newProducts, setNewProducts] = useState(staticData);
+const [newProducts, setNewProducts] = useState(products);
 const [isLoading,setIsLoading] = useState(true)
     const getProducts = ()=>{
         let requestOption = {
