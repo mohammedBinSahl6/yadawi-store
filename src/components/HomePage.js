@@ -1,137 +1,137 @@
-import { useContext, useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import product from "../imgs/product.jpg";
-import Load from "./Load";
-import landImg from "../imgs/land.svg";
-import step1 from "../imgs/craft.svg";
-import step2 from "../imgs/sell.svg";
-import step3 from "../imgs/buseniss.svg";
-import OpenCart from "./OpenCart";
-import { products } from "../data";
+import { useContext, useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import product from '../imgs/product.jpg';
+import Load from './Load';
+import landImg from '../imgs/land.svg';
+import step1 from '../imgs/craft.svg';
+import step2 from '../imgs/sell.svg';
+import step3 from '../imgs/buseniss.svg';
+import OpenCart from './OpenCart';
+import { products } from '../data';
 export default function HomePage() {
-  // const [newProductsHome, setNewProducts] = useState([]);
-  // const [mostOrderedProducts, setMostOrderedProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+	// const [newProductsHome, setNewProducts] = useState([]);
+	// const [mostOrderedProducts, setMostOrderedProducts] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
 
-  //     const getProducts = ()=>{
-  //         let requestOption = {
-  //             method : 'GET'
-  //         }
-  //         let apiURL = process.env.REACT_APP_BASE_API_URL
-  //         fetch(`${apiURL}/home`,requestOption).then(response => {
-  //             console.log(response)
-  //             return response.json()
-  //         }).then(result =>{
-  //             const {new_5_products,most_ordered_products} = result;
-  //             setNewProducts(new_5_products)
-  //             setMostOrderedProducts(most_ordered_products)
-  //             console.log(result)
-  //             setIsLoading(false)
-  //         }).catch(error =>{
-  //             console.log(error)
-  //             setIsLoading(false)
+	//     const getProducts = ()=>{
+	//         let requestOption = {
+	//             method : 'GET'
+	//         }
+	//         let apiURL = process.env.REACT_APP_BASE_API_URL
+	//         fetch(`${apiURL}/home`,requestOption).then(response => {
+	//             console.log(response)
+	//             return response.json()
+	//         }).then(result =>{
+	//             const {new_5_products,most_ordered_products} = result;
+	//             setNewProducts(new_5_products)
+	//             setMostOrderedProducts(most_ordered_products)
+	//             console.log(result)
+	//             setIsLoading(false)
+	//         }).catch(error =>{
+	//             console.log(error)
+	//             setIsLoading(false)
 
-  //         })
+	//         })
 
-  //     }
-  const [most, setMost] = useState(products);
-  const mostOrderedProducts = products.slice(-3);
-  const newProductsHome = products.slice(3);
+	//     }
+	const [most, setMost] = useState(products);
+	const mostOrderedProducts = products.slice(-3);
+	const newProductsHome = products.slice(3);
 
-  const myref = useRef();
-  useEffect(() => {
-    myref.current?.scrollIntoView({ behavior: "smooth" });
-    // getProducts()
-  }, []);
-  return (
-    <div ref={myref}>
-      <div className="container-fluid text-white starter " id="land">
-        <img className="land-img" src={landImg} />
-        <div className="row headers-holder">
-          <h1
-            className=" display-1 text-center text-white"
-            data-aos="fade-up"
-            data-aos-duration="2000"
-          >
-            Welcome to
-          </h1>
-          <h3
-            className="text-center head "
-            data-aos="fade-up"
-            data-aos-duration="2000"
-            data-aos-delay="500"
-          >
-            Yadawi Store
-          </h3>
-        </div>
-        <div className="row p-5">
-          <div className="f-holder">
-            <Link to="/login" className="btn btn-light">
-              Login Now
-            </Link>
-          </div>
-          <h3 className="text-center p-3">OR</h3>
-          <div className="f-holder">
-            <Link to="/signup" className="btn btn-outline-light my-3">
-              Sign up
-            </Link>
-          </div>
-        </div>
-      </div>
+	const myref = useRef();
+	useEffect(() => {
+		myref.current?.scrollIntoView({ behavior: 'smooth' });
+		// getProducts()
+	}, []);
+	return (
+		<div ref={myref}>
+			<div className='container-fluid text-white starter ' id='land'>
+				<img className='land-img' src={landImg} />
+				<div className='row headers-holder'>
+					<h1
+						className=' display-1 text-center text-white'
+						data-aos='fade-up'
+						data-aos-duration='2000'
+					>
+						Welcome to
+					</h1>
+					<h3
+						className='text-center head '
+						data-aos='fade-up'
+						data-aos-duration='2000'
+						data-aos-delay='500'
+					>
+						Yadawi Store
+					</h3>
+				</div>
+				<div className='row p-5'>
+					<div className='f-holder'>
+						<Link to='/login' className='btn btn-light'>
+							Login Now
+						</Link>
+					</div>
+					<h3 className='text-center p-3'>OR</h3>
+					<div className='f-holder'>
+						<Link to='/signup' className='btn btn-outline-light my-3'>
+							Sign up
+						</Link>
+					</div>
+				</div>
+			</div>
 
-      <div className="container-fluid steps-section">
-        <div className="row p-5">
-          <div className="col-sm-6 p-3">
-            <div className="f-holder">
-              <img className="img-step" src={step1} data-aos="zoom-in-up" />
-            </div>
-          </div>
-          <div className="col-sm-6 p-3">
-            <h3 className="" data-aos="fade-up">
-              Be creative in your craft
-            </h3>
-            <p data-aos="fade-down" data-aos-delay="500">
-              Your handmade is your product. Show the world somthing about your
-              culture.
-            </p>
-          </div>
-        </div>
-        <div className="row p-5">
-          <div className="col-sm-6 p-3">
-            <h3 className="" data-aos="fade-up">
-              Sell your product
-            </h3>
-            <p data-aos="fade-down" data-aos-delay="500">
-              Sell your creatives with best price , and earn money from your
-              handmades .
-            </p>
-          </div>
-          <div className="col-sm-6 p-3">
-            <img className="img-step" src={step2} data-aos="zoom-in-up" />
-          </div>
-        </div>
-        <div className="row p-5">
-          <div className="col-sm-6 p-3">
-            <img className="img-step" src={step3} data-aos="zoom-in-up" />
-          </div>
-          <div className="col-sm-6 p-3">
-            <h3 className="" data-aos="fade-up">
-              Start your own Business
-            </h3>
-            <p data-aos="fade-down" data-aos-delay="500">
-              Explore the other cultures and increace your sells and your
-              business will comes to you!
-            </p>
-          </div>
-        </div>
-        <hr />
-      </div>
+			<div className='container-fluid steps-section'>
+				<div className='row p-5'>
+					<div className='col-sm-6 p-3'>
+						<div className='f-holder'>
+							<img className='img-step' src={step1} data-aos='zoom-in-up' />
+						</div>
+					</div>
+					<div className='col-sm-6 p-3'>
+						<h3 className='' data-aos='fade-up'>
+							Be creative in your craft
+						</h3>
+						<p data-aos='fade-down' data-aos-delay='500'>
+							Your handmade is your product. Show the world somthing about your
+							culture.
+						</p>
+					</div>
+				</div>
+				<div className='row p-5'>
+					<div className='col-sm-6 p-3'>
+						<h3 className='' data-aos='fade-up'>
+							Sell your product
+						</h3>
+						<p data-aos='fade-down' data-aos-delay='500'>
+							Sell your creatives with best price , and earn money from your handmades
+							.
+						</p>
+					</div>
+					<div className='col-sm-6 p-3'>
+						<img className='img-step' src={step2} data-aos='zoom-in-up' />
+					</div>
+				</div>
+				<div className='row p-5'>
+					<div className='col-sm-6 p-3'>
+						<img className='img-step' src={step3} data-aos='zoom-in-up' />
+					</div>
+					<div className='col-sm-6 p-3'>
+						<h3 className='' data-aos='fade-up'>
+							Start your own Business
+						</h3>
+						<p data-aos='fade-down' data-aos-delay='500'>
+							Explore the other cultures and increace your sells and your business
+							will comes to you!
+						</p>
+					</div>
+				</div>
+				<hr />
+			</div>
 
-      <div className="container-fluid" id="products">
-        <div className="row p-3">
-          <h1 className="text-center">Our Most Ordered Products</h1>
-        </div>
-        {/* {isLoading ? <Load /> 
+			<div className='container-fluid' id='products'>
+				<div className='row p-3'>
+					<h1 className='text-center'>Our Most Ordered Products</h1>
+				</div>
+				{/* {isLoading ? <Load /> 
                 :
                     
                     <div className="row pt-3">
@@ -154,79 +154,76 @@ export default function HomePage() {
 
                 </div>} */}
 
-        <div className="row p-3">
-          {mostOrderedProducts.map((p) => (
-            <div key={p.id} className="col-sm-4  f-holder">
-              <Link className="empty-link" to={`/product/${p.id}`}>
-                <article class="card">
-                  <div class="temporary_text">
-                    <img className="pro-imge" src={p.image} />
-                  </div>
-                  <div class="card_content">
-                    <span class="card_title">{p.title}</span>
-                    <span class="card_subtitle">
-                      Perfect Product for you coming from our Culture.
-                    </span>
-                    <p class="card_description">
-                    {p.disc}
-                    </p>
-                  </div>
-                </article>
-              </Link>
-            </div>
-          ))}
-        </div>
-        {mostOrderedProducts && (
-          <div className="f-holder">
-            <Link
-              to="/shop#top"
-              className="btn btn-dark my-3"
-              data-aos="zoom-in-up"
-              data-aos-delay="300"
-            >
-              Show more items
-            </Link>
-          </div>
-        )}
-        <hr />
-        <div className="container-fluid" id="new-products">
-          <div className="row p-3 mt-5">
-            <h1 className="text-center">Our New Products</h1>
-          </div>
-          {isLoading ? (
-            <Load />
-          ) : (
-            <div className="row p-5">
-              {newProductsHome.length === 0 ? (
-                <div className="h1 text-center p-3">Coming soon ...</div>
-              ) : (
-                newProductsHome.map((p) => (
-                  <div key={p.id} className="col-sm-4  f-holder">
-                    <Link className="empty-link" to={`/product/${p.id}`}>
-                      <article class="card">
-                        <div class="temporary_text">
-                          <img className="pro-imge" src={p.image} />
-                        </div>
-                        <div class="card_content">
-                          <span class="card_title">{p.title}</span>
-                          <span class="card_subtitle">
-                            Perfect Product for you coming from our Culture.
-                          </span>
-                          <p class="card_description">
-                           {p.disc}
-                          </p>
-                        </div>
-                      </article>
-                    </Link>
-                  </div>
-                ))
-              )}
-            </div>
-          )}
-        </div>
-      </div>
+				<div className='row p-3'>
+					{mostOrderedProducts.map((p) => (
+						<div key={p.id} className='col-sm-4  f-holder'>
+							<Link className='empty-link' to={`/product/${p.id}`}>
+								<article class='card'>
+									<div class='temporary_text'>
+										<img className='pro-imge' src={p.image} />
+									</div>
+									<div class='card_content'>
+										<span class='card_title'>{p.title}</span>
+										<span class='card_subtitle'>
+											Perfect Product for you coming from our Culture.
+										</span>
+										<p class='card_description'>{p.disc}</p>
+									</div>
+								</article>
+							</Link>
+						</div>
+					))}
+				</div>
+				{mostOrderedProducts && (
+					<div className='f-holder'>
+						<Link
+							to='/shop#top'
+							className='btn btn-dark my-3'
+							data-aos='zoom-in-up'
+							data-aos-delay='300'
+						>
+							Show more items
+						</Link>
+					</div>
+				)}
+				<hr />
+				<div className='container-fluid' id='new-products'>
+					<div className='row p-3 mt-5'>
+						<h1 className='text-center'>Our New Products</h1>
+					</div>
+					{isLoading ? (
+						<Load />
+					) : (
+						<div className='row p-5'>
+							{newProductsHome.length === 0 ? (
+								<div className='h1 text-center p-3'>Coming soon ...</div>
+							) : (
+								newProductsHome.map((p) => (
+									<div key={p.id} className='col-sm-4  f-holder'>
+										<Link className='empty-link' to={`/product/${p.id}`}>
+											<article class='card'>
+												<div class='temporary_text'>
+													<img className='pro-imge' src={p.image} />
+												</div>
+												<div class='card_content'>
+													<span class='card_title'>{p.title}</span>
+													<span class='card_subtitle'>
+														Perfect Product for you coming from our
+														Culture.
+													</span>
+													<p class='card_description'>{p.disc}</p>
+												</div>
+											</article>
+										</Link>
+									</div>
+								))
+							)}
+						</div>
+					)}
+				</div>
+			</div>
 
-      <OpenCart />
-    </div>
-  );
+			<OpenCart />
+		</div>
+	);
 }
