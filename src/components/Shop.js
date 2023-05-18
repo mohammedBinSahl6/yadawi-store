@@ -43,7 +43,7 @@ export default function Shop() {
           <div className="row">
             <div className="col-sm products-body p-3">
               <div className="row">
-                {newProducts.map((p, index) => (
+                {newProducts.map((p) => (
                   <div key={p.id} className="col-sm-4  f-holder">
                   <Link className="empty-link" to={`/product/${p.id}`}>
                     <article class="card">

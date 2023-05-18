@@ -350,10 +350,14 @@ footer a.btn-outline-light {
 }
 .img-step {
 	width: 60%;
+  border: 1px solid #666;
+  border-radius: 8px;
+  box-shadow: 1px 1px 12px   #777;
 }
 
 .card {
 	overflow: hidden !important;
+  margin: 1em 0;
 }
 
 .open-cart {
@@ -483,3 +487,12 @@ footer a.btn-outline-light {
 	opacity: 1;
 	transition-delay: 0.25s;
 }
+
+.item-header{
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 1em;}
+
+  .step-pa{
+    padding-right: 1em !important;
+  }
