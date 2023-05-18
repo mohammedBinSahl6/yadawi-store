@@ -445,7 +445,6 @@ footer a.btn-outline-light {
 }
 
 .card_content::before {
-<<<<<<< HEAD
 	content: '';
 	position: absolute;
 	top: -47px;
@@ -455,18 +454,7 @@ footer a.btn-outline-light {
 	transform: rotate(-175deg);
 	border-radius: 50%;
 	box-shadow: inset 48px 48px #f2f2f2;
-=======
-  content: '';
-  position: absolute;
-  top: -47px;
-  right: -45px;
-  width: 100px;
-  height: 100px;
-  transform: rotate(-175deg);
-  border-radius: 50%;
-  box-shadow: inset 48px 48px #f2f2f2;
-  z-index: -1;
->>>>>>> 6485559cec46b5c6b5edb9291e44a21897159014
+	z-index: -1;
 }
 
 .card_title {
