@@ -1,6 +1,6 @@
 const FAQ = () => {
 	return (
-		<div className='starter'>
+		<div className='starter faq-page'>
 			<section className='faq-ask'>
 				<h3 className='text-center mb-4 pb-2 fw-bold'>FAQ</h3>
 				<p className='text-center mb-5'>
